@@ -10,12 +10,13 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
+            Task1();
             Task2();
         }
         private static void Task2()
         {
             Console.WriteLine("Message");
-            Task1();
+
         }
     private static void Task1()
         {
@@ -28,4 +29,3 @@ namespace ConsoleApp2
     
 }
 
-}   

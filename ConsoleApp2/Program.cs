@@ -10,6 +10,15 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
+            Task1();
         }
+    private static void Task1()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine(i);
+            }
+        } 
     }
-}
+
+}   

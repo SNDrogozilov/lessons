@@ -12,6 +12,7 @@ namespace ConsoleApp2
         {
             Task1();
             Task2();
+            Task3(1, 2);
         }
         private static void Task2()
         {
@@ -24,7 +25,8 @@ namespace ConsoleApp2
             {
                 Console.WriteLine(i);
             }
-        } 
+        }
+        private static void Task3(int a, int b) => Console.WriteLine($"Сумма = {a + b}"); 
     }
     
 }

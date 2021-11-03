@@ -10,7 +10,7 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            double a, b, c;
+            /*double a, b, c;
             Console.WriteLine($"Введите a: ");
             a = double.Parse(Console.ReadLine());
             Console.WriteLine($"Введите b: ");
@@ -25,7 +25,27 @@ namespace ConsoleApp2
             {
                 Console.WriteLine("Треугольник не равнобедренный");
             }
+            Console.ReadKey();*/
+            double valuePurchase;
+            Console.WriteLine("Введите стоимость покупки: ");
+            valuePurchase = double.Parse(Console.ReadLine());
+            Console.WriteLine($"Стоимость покупки с учетом скидки = {Discount(valuePurchase, 0)}");
             Console.ReadKey();
+
+        }
+        public static double Discount(double discount, double purchaseAmount)
+        {
+            discount *= 0.1;
+            if (purchaseAmount > 100)
+            {
+                return purchaseAmount - discount;
+            }
+            else
+            {
+                Console.WriteLine($"У вас нет скидки, сумма покупки = {purchaseAmount}");
+                return double.Parse(Console.ReadLine());
+            }
+
         }
     }
 }

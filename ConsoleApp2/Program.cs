@@ -10,27 +10,25 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            double valuePurchase;
+            float valuePurchase;
             Console.WriteLine("Введите стоимость покупки: ");
-            valuePurchase = double.Parse(Console.ReadLine());
+            valuePurchase = float.Parse(Console.ReadLine());
             Console.WriteLine($"Стоимость покупки с учетом скидки = {Discount(valuePurchase, 0)}");
             Console.ReadKey();
 
         }
-        public static double Discount(double discount, double purchaseAmount)
+
+        private static float Discount(float discount, float purchaseAmount)
         {
-            purchaseAmount = discount;
-            discount *= 0.1;
             if (purchaseAmount > 100)
             {
-                return purchaseAmount - discount;
+                return purchaseAmount * discount / 100;
             }
             else
             {
                 Console.WriteLine($"У вас нет скидки, сумма покупки = {purchaseAmount}");
                 return purchaseAmount;
             }
-
         }
     }
 }

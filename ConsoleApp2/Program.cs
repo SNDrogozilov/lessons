@@ -10,24 +10,23 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            Task1();
-            Task2();
-            Task3(1, 2);
-        }
-        private static void Task2()
-        {
-            Console.WriteLine("Message");
-
-        }
-    private static void Task1()
-        {
-            for (int i = 1; i <= 11; i++)
+            double a, b, c;
+            Console.WriteLine($"Введите a: ");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine($"Введите b: ");
+            b = double.Parse(Console.ReadLine());
+            Console.WriteLine($"Введите c: ");
+            c = double.Parse(Console.ReadLine());
+            if (a == b || b == c || a == c)
             {
-                Console.WriteLine(i);
+                Console.WriteLine("Треугольник равнобедренный");
             }
+            else
+            {
+                Console.WriteLine("Треугольник не равнобедренный");
+            }
+            Console.ReadKey();
         }
-        private static void Task3(int a, int b) => Console.WriteLine($"Сумма = {a + b}"); 
     }
-    
 }
 

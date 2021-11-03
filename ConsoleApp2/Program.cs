@@ -13,16 +13,17 @@ namespace ConsoleApp2
             float valuePurchase;
             Console.WriteLine("Введите стоимость покупки: ");
             valuePurchase = float.Parse(Console.ReadLine());
-            Console.WriteLine($"Стоимость покупки с учетом скидки = {Discount(valuePurchase, 0)}");
+            Console.WriteLine($"Стоимость покупки с учетом скидки = {Discount(10, valuePurchase)}");
             Console.ReadKey();
 
         }
 
         private static float Discount(float discount, float purchaseAmount)
         {
+            float discountAmount = purchaseAmount * discount / 100;
             if (purchaseAmount > 100)
             {
-                return purchaseAmount * discount / 100;
+                return purchaseAmount - discountAmount;
             }
             else
             {

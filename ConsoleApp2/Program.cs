@@ -35,7 +35,6 @@ namespace ConsoleApp2
         }
         public static double Discount(double discount, double purchaseAmount)
         {
-            purchaseAmount = discount;
             discount *= 0.1;
             if (purchaseAmount > 100)
             {

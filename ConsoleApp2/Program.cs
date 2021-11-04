@@ -26,15 +26,17 @@ namespace ConsoleApp2
                 Console.WriteLine("Треугольник не равнобедренный");
             }
             Console.ReadKey();*/
-            double valuePurchase;
+
+            /*double valuePurchase;
             Console.WriteLine("Введите стоимость покупки: ");
             valuePurchase = double.Parse(Console.ReadLine());
             Console.WriteLine($"Стоимость покупки с учетом скидки = {Discount(valuePurchase, 0)}");
-            Console.ReadKey();
+            Console.ReadKey();*/
 
         }
-        public static double Discount(double discount, double purchaseAmount)
+        /*public static double Discount(double discount, double purchaseAmount)
         {
+            purchaseAmount = discount;
             discount *= 0.1;
             if (purchaseAmount > 100)
             {
@@ -45,8 +47,7 @@ namespace ConsoleApp2
                 Console.WriteLine($"У вас нет скидки, сумма покупки = {purchaseAmount}");
                 return double.Parse(Console.ReadLine());
             }
-
-        }
+        }*/
     }
 }
 

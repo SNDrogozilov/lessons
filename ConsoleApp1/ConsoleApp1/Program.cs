@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -11,35 +7,56 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             int[] massive = { 8, 5, 7, 1, 81, 44, 18, 101, -2 };
+            SortArray(massive);
+            
+            Console.WriteLine("Отсортированный массив");
+            ShowArray(massive);
+
+            int lastArrayIndex = massive.Length - 1;
+            int firstArrayIndex = 0;
+            
+            Console.WriteLine($"Max Element={massive[lastArrayIndex]}");
+            Console.WriteLine($"Min Element={massive[firstArrayIndex]}");
+            
+            Console.WriteLine("Финальный массив");
+            ShowArray(Swap(massive));
+            
+            Console.ReadLine();
+        }
+
+        private static void SortArray(int[] arr)
+        {
             int temp;
-            int temp2;
-            for (int i = 0; i < massive.Length - 1; i++)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
-                for (int j = i + 1; j < massive.Length; j++)
+                for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if (massive[i] > massive[j])
+                    if (arr[i] > arr[j])
                     {
-                        temp = massive[i];
-                        massive[i] = massive[j];
-                        massive[j] = temp;
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
 
                     }
                 }
             }
-            Console.WriteLine("Отсортированный массив");
+        }
 
-            for (int i = 0; i < massive.Length; i++)
+        private static void ShowArray(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
             {
-                if (massive[0] < massive[8])
-                {
-                    temp2 = massive[0];
-                    massive[0] = massive[8];
-                    massive[8] = temp2;
-
-                }
-                Console.WriteLine(massive[i]);
+                Console.WriteLine(arr[i]);
             }
-            Console.ReadLine();
+        }
+
+        private static int[] Swap(int[] arr)
+        {
+            int temp = arr[0];
+            arr[0] = arr[arr.Length-1];
+            arr[arr.Length-1] = temp;
+
+            return arr;
         }
     }
 }

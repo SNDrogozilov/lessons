@@ -1,0 +1,8 @@
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\Masivs\Masivs\obj\Debug\Masivs.csproj.AssemblyReference.cache
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\Masivs\Masivs\obj\Debug\Masivs.csproj.SuggestedBindingRedirects.cache
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\Masivs\Masivs\obj\Debug\Masivs.csproj.CoreCompileInputs.cache
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\Masivs\Masivs\bin\Debug\Masivs.exe.config
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\Masivs\Masivs\bin\Debug\Masivs.exe
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\Masivs\Masivs\bin\Debug\Masivs.pdb
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\Masivs\Masivs\obj\Debug\Masivs.exe
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\Masivs\Masivs\obj\Debug\Masivs.pdb

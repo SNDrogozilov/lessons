@@ -6,57 +6,24 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int[] massive = { 8, 5, 7, 1, 81, 44, 18, 101, -2 };
-            SortArray(massive);
+            int[,] numbers = {{3, 4, 7}, {32, 54, 765}, {54, 64, -27}, {33, 40, 78}};
             
-            Console.WriteLine("Отсортированный массив");
-            ShowArray(massive);
-
-            int lastArrayIndex = massive.Length - 1;
-            int firstArrayIndex = 0;
-            
-            Console.WriteLine($"Max Element={massive[lastArrayIndex]}");
-            Console.WriteLine($"Min Element={massive[firstArrayIndex]}");
-            
-            Console.WriteLine("Финальный массив");
-            ShowArray(Swap(massive));
+            ShowArray(numbers);
             
             Console.ReadLine();
         }
 
-        private static void SortArray(int[] arr)
+        private static void ShowArray(int[,] arr)
         {
-            int temp;
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
-                for (int j = i + 1; j < arr.Length; j++)
+                for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    if (arr[i] > arr[j])
-                    {
-                        temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
-
-                    }
+                    Console.Write($"{arr[i, j]} \t");
                 }
+
+                Console.WriteLine();
             }
-        }
-
-        private static void ShowArray(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.WriteLine(arr[i]);
-            }
-        }
-
-        private static int[] Swap(int[] arr)
-        {
-            int temp = arr[0];
-            arr[0] = arr[arr.Length-1];
-            arr[arr.Length-1] = temp;
-
-            return arr;
         }
     }
 }

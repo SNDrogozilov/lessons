@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * 1)	Вывести на экран у форме таблицы:
+
+3	4	7
+32	54	765
+54	64	-27
+33	40	78
+
+ */
+using System;
 
 namespace ConsoleApp1
 {

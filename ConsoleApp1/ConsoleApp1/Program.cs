@@ -1,5 +1,5 @@
 ﻿/*
- * Определить среднее арифметическое каждой строки
+ * Oпределить максимум и минимум массива.
  */
 
 using System;
@@ -14,7 +14,8 @@ namespace ConsoleApp1
             int[,] numbers = {{3, 4, 7}, {32, 54, 765}, {54, 64, -27}, {33, 40, 78}};
             
             ShowArray(numbers);
-            AverageOfLinesArray(numbers);
+            Console.WriteLine($"Max element of array = {GetMaxNumberArray(numbers)} \n Min element of array = {GetMinNumberArray(numbers)}");
+            
             
             Console.ReadLine();
         }
@@ -31,28 +32,44 @@ namespace ConsoleApp1
                 Console.WriteLine();
             }
         }
-        
-        private static void AverageOfLinesArray(int[,] arr)
+
+        private static float GetMaxNumberArray(int[,] arr)
         {
-            int summaOfLine = 0;
-            int dimensionsAmount = arr.GetLength(0);
-            int numbersAmountInLine = arr.GetLength(1);
-            
-            for (int i = 0; i < dimensionsAmount; i++)
+            //за максимальный элемент берем первый элемент массива
+            float max = arr[0,0];
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
-                for (int j = 0; j < numbersAmountInLine; j++)
+                for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    //получаем сумму чисел в строке
-                    summaOfLine += arr[i, j];
+                    //если элемент массива больше максимального числа, то максимальным становится этот элемент
+                    if (arr[i, j] > max)
+                    {
+                        max = arr[i, j];
+                    }
                 }
-
-                Console.WriteLine($"Average of line {i} = {GetAverage(summaOfLine, numbersAmountInLine)}");
-                
-                //Обнуляем сумму чисел в строке чтоб нормально посчитать среднее арифметическое следующей строки
-                summaOfLine = 0;
             }
-        }
 
-        private static float GetAverage(float summ, int numbersAmount) => summ / numbersAmount;
+            return max;
+        }
+        
+        private static float GetMinNumberArray(int[,] arr)
+        {
+            //за минимальный элемент берем первый элемент массива
+            float min = arr[0,0];
+            
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    //если элемент массива меньше минимального числа, то минимальным становится этот элемент
+                    if (arr[i, j] < min)
+                    {
+                        min = arr[i, j];
+                    }
+                }
+            }
+
+            return min;
+        }
     }
 }

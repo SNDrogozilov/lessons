@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ * Найти сумму элементов каждой строки.
+ */
+using System;
 
 namespace ConsoleApp1
 {
@@ -9,7 +12,7 @@ namespace ConsoleApp1
             int[,] numbers = {{3, 4, 7}, {32, 54, 765}, {54, 64, -27}, {33, 40, 78}};
             
             ShowArray(numbers);
-            SumFirstLineArray(numbers);
+            SummaOfArrayElements(numbers);
             
             Console.ReadLine();
         }
@@ -29,7 +32,7 @@ namespace ConsoleApp1
             }
         }
         
-        private static void SumFirstLineArray(int[,] arr)
+        private static void SummaOfArrayElements(int[,] arr)
         {
             int summa = 0;
             for (int i = 0; i < arr.GetLength(0); i++)

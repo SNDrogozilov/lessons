@@ -14,7 +14,7 @@ namespace ConsoleApp1
             int[,] numbers = {{3, 4, 7}, {32, 54, 765}, {54, 64, -27}, {33, 40, 78}};
             
             ShowArray(numbers);
-            Console.WriteLine($"Max element of array = {GetMaxNumberArray(numbers)} \n Min element of array = {GetMinNumberArray(numbers)}");
+            Console.WriteLine($"Even Amount in 3d line = {GetEvenNumbersAmountOfArrayLine(numbers, 2)} \n Odd Amount in 3d line = {GetOddNumbersOfArrayLine(numbers,2)}");
             
             
             Console.ReadLine();
@@ -33,43 +33,40 @@ namespace ConsoleApp1
             }
         }
 
-        private static float GetMaxNumberArray(int[,] arr)
+        //Четное число
+        private static float GetEvenNumbersAmountOfArrayLine(int[,] arr, int lineNumber)
         {
-            //за максимальный элемент берем первый элемент массива
-            float max = arr[0,0];
-            for (int i = 0; i < arr.GetLength(0); i++)
+            int evenNumbersAmount = 0;
+            
+            //только 1 цикл потому что ищем количество четных чисел только в одном ряду
+            for (int j = 0; j < arr.GetLength(1); j++)
             {
-                for (int j = 0; j < arr.GetLength(1); j++)
+                //если элемент массива четный то увеличиваем счетчик найденных четных чисел
+                if (arr[lineNumber, j] % 2 == 0)
                 {
-                    //если элемент массива больше максимального числа, то максимальным становится этот элемент
-                    if (arr[i, j] > max)
-                    {
-                        max = arr[i, j];
-                    }
+                    evenNumbersAmount++;
                 }
             }
 
-            return max;
+            return evenNumbersAmount;
         }
         
-        private static float GetMinNumberArray(int[,] arr)
+        //Нечетное число
+        private static float GetOddNumbersOfArrayLine(int[,] arr, int lineNumber)
         {
-            //за минимальный элемент берем первый элемент массива
-            float min = arr[0,0];
+            int oddNumbersAmount = 0;
             
-            for (int i = 0; i < arr.GetLength(0); i++)
+            //только 1 цикл потому что ищем количество нечетных чисел только в одном ряду
+            for (int j = 0; j < arr.GetLength(1); j++)
             {
-                for (int j = 0; j < arr.GetLength(1); j++)
+                //если элемент массива нечетный то увеличиваем счетчик найденных нечетных чисел
+                if (arr[lineNumber, j] % 2 != 0)
                 {
-                    //если элемент массива меньше минимального числа, то минимальным становится этот элемент
-                    if (arr[i, j] < min)
-                    {
-                        min = arr[i, j];
-                    }
+                    oddNumbersAmount++;
                 }
             }
 
-            return min;
+            return oddNumbersAmount;
         }
     }
 }

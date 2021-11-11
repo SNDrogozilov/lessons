@@ -1,5 +1,5 @@
 ﻿/*
- * Oпределить максимум и минимум массива.
+ * Найти количество четных и нечетных чисел в массиве
  */
 
 using System;
@@ -14,7 +14,7 @@ namespace ConsoleApp1
             int[,] numbers = {{3, 4, 7}, {32, 54, 765}, {54, 64, -27}, {33, 40, 78}};
             
             ShowArray(numbers);
-            Console.WriteLine($"Even Amount in 3d line = {GetEvenNumbersAmountOfArrayLine(numbers, 2)} \n Odd Amount in 3d line = {GetOddNumbersOfArrayLine(numbers,2)}");
+            Console.WriteLine($"Even Amount in array = {GetEvenNumbersAmountOfArray(numbers)} \n Odd Amount in array = {GetOddNumbersOfArray(numbers)}");
             
             
             Console.ReadLine();
@@ -34,35 +34,42 @@ namespace ConsoleApp1
         }
 
         //Четное число
-        private static float GetEvenNumbersAmountOfArrayLine(int[,] arr, int lineNumber)
+        private static float GetEvenNumbersAmountOfArray(int[,] arr)
         {
             int evenNumbersAmount = 0;
             
             //только 1 цикл потому что ищем количество четных чисел только в одном ряду
-            for (int j = 0; j < arr.GetLength(1); j++)
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
-                //если элемент массива четный то увеличиваем счетчик найденных четных чисел
-                if (arr[lineNumber, j] % 2 == 0)
+                for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    evenNumbersAmount++;
+                    //если элемент массива четный то увеличиваем счетчик найденных четных чисел
+                    if (arr[i, j] % 2 == 0)
+                    {
+                        evenNumbersAmount++;
+                    }
                 }
+                
             }
 
             return evenNumbersAmount;
         }
         
         //Нечетное число
-        private static float GetOddNumbersOfArrayLine(int[,] arr, int lineNumber)
+        private static float GetOddNumbersOfArray(int[,] arr)
         {
             int oddNumbersAmount = 0;
             
             //только 1 цикл потому что ищем количество нечетных чисел только в одном ряду
-            for (int j = 0; j < arr.GetLength(1); j++)
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
-                //если элемент массива нечетный то увеличиваем счетчик найденных нечетных чисел
-                if (arr[lineNumber, j] % 2 != 0)
+                for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    oddNumbersAmount++;
+                    //если элемент массива нечетный то увеличиваем счетчик найденных нечетных чисел
+                    if (arr[i, j] % 2 != 0)
+                    {
+                        oddNumbersAmount++;
+                    }
                 }
             }
 

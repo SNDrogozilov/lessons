@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ * Найти сумму элементов первой строки.
+ */
+using System;
 
 namespace ConsoleApp1
 {

@@ -1,9 +1,9 @@
 ﻿/*
- * определить минимальный элемент первой и третей строки.
+ * Создать зубчатый (ступенчатый) массив (массив массивов) на "n" массивов и
+ * заполнить каждый из этих массивов на "m" элементов
  */
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace ConsoleApp1
 {
@@ -11,45 +11,41 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int[,] numbers = {{3, 4, 7}, {32, 54, 765}, {54, 64, -27}, {33, 40, 78}};
-            
-            ShowArray(numbers);
-            Console.WriteLine($"Min element in 1st line of array = {GetMinNumberOfArrayLine(numbers, 0)} \n Min element in 3d line of array = {GetMinNumberOfArrayLine(numbers,2)}");
-            
+            Console.Write("Main Arr Length: ");
+            int arrLength = Convert.ToInt32(Console.ReadLine());
+            int[][] arr=new int[arrLength][];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine($"Input length of {i} array: ");
+                int insideArrLength = Convert.ToInt32(Console.ReadLine());
+                arr[i] = new int[insideArrLength];
+                
+                for (int j = 0; j < arr[i].Length; j++)
+                {
+                    Console.WriteLine($"Input {j} element of {i} array: ");
+                    int arrElement = Convert.ToInt32(Console.ReadLine());
+                    arr[i][j] = arrElement;
+                }
+            }
+
+            Console.WriteLine("\nYour Array\n");
+            ShowArray(arr);
             
             Console.ReadLine();
         }
 
-        private static void ShowArray(int[,] arr)
+        private static void ShowArray(int[][] arr)
         {
-            for (int i = 0; i < arr.GetLength(0); i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0; j < arr.GetLength(1); j++)
+                for (int j = 0; j < arr[i].Length; j++)
                 {
-                    Console.Write($"{arr[i, j]} \t");
+                    Console.Write($"{arr[i][j]} \t");
                 }
 
                 Console.WriteLine();
             }
-        }
-
-        //Сделаем один метод и вызовим его для двух рядов 1 и 3
-        private static float GetMinNumberOfArrayLine(int[,] arr, int lineNumber)
-        {
-            //берем первый элемент из ряда и делаем его минимальным, который будем сравнивать с другими элементами
-            int min = arr[lineNumber, 0];
-            
-            //только 1 цикл потому что ищем минимальный элемент только в одном ряду
-            for (int j = 0; j < arr.GetLength(1); j++)
-            {
-                //если элемент массива меньше минимального то минимальным становится этот элемент
-                if (arr[lineNumber, j] < min)
-                {
-                    min = arr[lineNumber, j];
-                }
-            }
-
-            return min;
         }
     }
 }

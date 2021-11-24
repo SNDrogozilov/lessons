@@ -10,15 +10,19 @@ namespace _24._11._2011
     {
         static void Main(string[] args)
         {
+            MaxNumber();
+            SqareFigure();
+            ChooseNumber();
+        }
+        public static void MaxNumber()
+        {
             Console.WriteLine("Введите первое число: \t");
             double firstNomber = double.Parse(Console.ReadLine());
             Console.WriteLine("Введите второе число: \t");
             double secondNomber = double.Parse(Console.ReadLine());
-            double maxNomber = firstNomber > secondNomber? firstNomber: secondNomber;
+            double maxNomber = firstNomber > secondNomber ? firstNomber : secondNomber;
             Console.WriteLine($"Максимальное число {maxNomber}");
             Console.ReadLine();
-            SqareFigure();
-            ChooseNumber();
         }
         public static void SqareFigure()
         {

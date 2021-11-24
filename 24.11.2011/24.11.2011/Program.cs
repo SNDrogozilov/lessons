@@ -18,6 +18,7 @@ namespace _24._11._2011
             Console.WriteLine($"Максимальное число {maxNomber}");
             Console.ReadLine();
             SqareFigure();
+            ChooseNumber();
         }
         public static void SqareFigure()
         {
@@ -32,5 +33,28 @@ namespace _24._11._2011
             Console.WriteLine($"Максимальная площадь {maxSqaure}");
             Console.ReadLine();
         }
+        public static void ChooseNumber()
+        {
+            Console.WriteLine("Введите номер операции: 1. Сложение;\t 2. Вычитание;\t 3. Умножение;\t");
+            int number = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите 2 числа. В зависимости от выбранноого типа операции, будет выполнено преобразование");
+            Console.WriteLine("Введите первое число:\t");
+            int countFirstNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите второе число:\t");
+            int countSecondNumber = int.Parse(Console.ReadLine());
+            switch (number)
+            {
+                case 1: Console.WriteLine($"Сложение = {countFirstNumber+countSecondNumber}");
+                    break;
+                case 2: Console.WriteLine($"Вычитание = {countFirstNumber-countSecondNumber}");
+                    break;
+                case 3: Console.WriteLine($"Умножение = {countFirstNumber*countSecondNumber}");
+                    break;
+                default: Console.WriteLine("Операция не определена");
+                    break;
+            }
+            Console.ReadLine();
+        }
+        
     }
 }

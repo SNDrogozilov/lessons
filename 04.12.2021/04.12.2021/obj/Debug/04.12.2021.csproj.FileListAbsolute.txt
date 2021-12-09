@@ -1,0 +1,8 @@
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\04.12.2021\04.12.2021\bin\Debug\04.12.2021.exe.config
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\04.12.2021\04.12.2021\bin\Debug\04.12.2021.exe
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\04.12.2021\04.12.2021\bin\Debug\04.12.2021.pdb
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\04.12.2021\04.12.2021\obj\Debug\04.12.2021.csproj.AssemblyReference.cache
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\04.12.2021\04.12.2021\obj\Debug\04.12.2021.csproj.SuggestedBindingRedirects.cache
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\04.12.2021\04.12.2021\obj\Debug\04.12.2021.csproj.CoreCompileInputs.cache
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\04.12.2021\04.12.2021\obj\Debug\04.12.2021.exe
+C:\Users\Natalia\Documents\VisualStudioProjects\lessons\04.12.2021\04.12.2021\obj\Debug\04.12.2021.pdb
